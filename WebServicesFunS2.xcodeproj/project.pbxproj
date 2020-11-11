@@ -10,9 +10,10 @@
 		457AD8E3255B65C6002FA6BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457AD8E2255B65C6002FA6BE /* AppDelegate.swift */; };
 		457AD8E5255B65C6002FA6BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457AD8E4255B65C6002FA6BE /* SceneDelegate.swift */; };
 		457AD8E7255B65C6002FA6BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457AD8E6255B65C6002FA6BE /* ViewController.swift */; };
-		457AD8EA255B65C6002FA6BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 457AD8E8255B65C6002FA6BE /* Main.storyboard */; };
 		457AD8EC255B65C8002FA6BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 457AD8EB255B65C8002FA6BE /* Assets.xcassets */; };
 		457AD8EF255B65C8002FA6BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 457AD8ED255B65C8002FA6BE /* LaunchScreen.storyboard */; };
+		457AD8F8255B65DE002FA6BE /* FlickrAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457AD8F7255B65DE002FA6BE /* FlickrAPI.swift */; };
+		457AD8FB255B65EB002FA6BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 457AD8FA255B65EB002FA6BE /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +21,11 @@
 		457AD8E2255B65C6002FA6BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		457AD8E4255B65C6002FA6BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		457AD8E6255B65C6002FA6BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		457AD8E9255B65C6002FA6BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		457AD8EB255B65C8002FA6BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		457AD8EE255B65C8002FA6BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		457AD8F0255B65C8002FA6BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		457AD8F7255B65DE002FA6BE /* FlickrAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrAPI.swift; sourceTree = "<group>"; };
+		457AD8FA255B65EB002FA6BE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +61,11 @@
 				457AD8E2255B65C6002FA6BE /* AppDelegate.swift */,
 				457AD8E4255B65C6002FA6BE /* SceneDelegate.swift */,
 				457AD8E6255B65C6002FA6BE /* ViewController.swift */,
-				457AD8E8255B65C6002FA6BE /* Main.storyboard */,
+				457AD8FA255B65EB002FA6BE /* Main.storyboard */,
 				457AD8EB255B65C8002FA6BE /* Assets.xcassets */,
 				457AD8ED255B65C8002FA6BE /* LaunchScreen.storyboard */,
 				457AD8F0255B65C8002FA6BE /* Info.plist */,
+				457AD8F7255B65DE002FA6BE /* FlickrAPI.swift */,
 			);
 			path = WebServicesFunS2;
 			sourceTree = "<group>";
@@ -126,7 +129,7 @@
 			files = (
 				457AD8EF255B65C8002FA6BE /* LaunchScreen.storyboard in Resources */,
 				457AD8EC255B65C8002FA6BE /* Assets.xcassets in Resources */,
-				457AD8EA255B65C6002FA6BE /* Main.storyboard in Resources */,
+				457AD8FB255B65EB002FA6BE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,20 +143,13 @@
 				457AD8E7255B65C6002FA6BE /* ViewController.swift in Sources */,
 				457AD8E3255B65C6002FA6BE /* AppDelegate.swift in Sources */,
 				457AD8E5255B65C6002FA6BE /* SceneDelegate.swift in Sources */,
+				457AD8F8255B65DE002FA6BE /* FlickrAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		457AD8E8255B65C6002FA6BE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				457AD8E9255B65C6002FA6BE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		457AD8ED255B65C8002FA6BE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
