@@ -51,6 +51,13 @@ struct FlickrAPI {
             if let data = dataOptional, let dataString = String(data: data, encoding: .utf8) {
                 print("we got data!!!")
                 print(dataString)
+                
+                // we want to convert the Data to a JSON object, then the JSON object to a Swift dictionary so we can parse the photos from the array
+                // to create [InterestingPhoto]
+                // write a method to do this
+                if let interestingPhotos = interestingPhotos(fromData: data) {
+                    print("we got an [InterestingPhoto] with \(interestingPhotos.count) photos")
+                }
             }
             else {
                 if let error = errorOptional {
@@ -61,5 +68,11 @@ struct FlickrAPI {
         // by default tasks are created in the suspended state
         // call resume() to start the task
         task.resume()
+    }
+    
+    static func interestingPhotos(fromData data: Data) -> [InterestingPhoto]? {
+        // if anything goes wrong, return nil
+        
+        return nil
     }
 }
