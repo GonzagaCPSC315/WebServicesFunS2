@@ -73,6 +73,54 @@ struct FlickrAPI {
     static func interestingPhotos(fromData data: Data) -> [InterestingPhoto]? {
         // if anything goes wrong, return nil
         
+        // MARK: - JSON
+        // javascript object notation
+        // json is the most commonly used format for passing data around the web
+        // it is really just a dictionary
+        // keys are strings
+        // values are strings, arrays, nested JSON objects, ints, bools, etc.
+        // our goal is to convert the data into a swift dictionary [String: Any]
+        // libaries (like swiftyJSON) that make this really easy
+        // we are gonna do it the long way!
+        do {
+            let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
+            guard let jsonDictionary = jsonObject as? [String: Any], let photosObject = jsonDictionary["photos"] as? [String: Any], let photoArray = photosObject["photo"] as? [[String: Any]] else {
+                print("Error parsing JSON")
+                return nil
+            }
+            // we sucessfully go the array of photos
+            print("successfully got photoArray")
+            var interestingPhotos = [InterestingPhoto]()
+            for photoObject in photoArray {
+                // parse a InterestingPhoto from photoObject ([String: Any])
+                // write a method to do this
+                if let interestingPhoto = interestingPhoto(fromJSON: photoObject) {
+                    interestingPhotos.append(interestingPhoto)
+                }
+            }
+            // return the array if it its not empty
+            // GS: finished after class
+            if !interestingPhotos.isEmpty {
+                return interestingPhotos
+            }
+        }
+        catch {
+            print("Error converting Data to JSON \(error)")
+        }
+        
         return nil
     }
+    
+    static func interestingPhoto(fromJSON json: [String: Any]) -> InterestingPhoto? {
+        // task: finish this method
+        // we need the id, title, datetaken, url_h
+        // GS: finished after class
+        guard let id = json["id"] as? String, let title = json["title"] as? String, let dateTaken = json["datetaken"] as? String, let photoURL = json["url_h"] as? String else {
+            return nil
+        }
+        // package up and return an InterestingPhoto
+        // GS: finished after class
+        return InterestingPhoto(id: id, title: title, dateTaken: dateTaken, photoURL: photoURL)
+    }
 }
+
