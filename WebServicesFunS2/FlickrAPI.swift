@@ -69,13 +69,26 @@ struct FlickrAPI {
                     // fetchInterestingPhotos() starts the task (that runs in the background), then it immediately returns (we can't return the array then!!)
                     
                     // we need a completion handler (AKA closure) to call code in ViewController when we have a result (success or failure)
-                    completion(interestingPhotos)
-                    // TODO: should call completion on failure as well
+                    // we want to call the completion closure so it runs on the main UI thread and can update our views
+                    // a thread in iOS is managed by a queue
+                    DispatchQueue.main.async {
+                        completion(interestingPhotos)
+                    }
+                    
+                    // should call completion on failure as well
+                }
+                else {
+                    DispatchQueue.main.async {
+                        completion(nil)
+                    }
                 }
             }
             else {
                 if let error = errorOptional {
                     print("Error getting data \(error)")
+                }
+                DispatchQueue.main.async {
+                    completion(nil)
                 }
             }
         }
