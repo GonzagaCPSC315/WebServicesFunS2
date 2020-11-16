@@ -38,7 +38,8 @@ struct FlickrAPI {
     }
     
     // lets define a function to make the request using the url we just constructed
-    static func fetchInterestingPhotos(completion: ([InterestingPhoto]?) -> Void) {
+    // @escaping tells the compiler that this closure executs after the method returns
+    static func fetchInterestingPhotos(completion: @escaping ([InterestingPhoto]?) -> Void) {
         let url = FlickrAPI.flickrURL()
         
         // we need to make a request to the Flickr API server using the url
