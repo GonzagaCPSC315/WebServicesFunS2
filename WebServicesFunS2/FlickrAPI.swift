@@ -6,7 +6,7 @@
 //  Copyright © 2020 Gina Sprint. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct FlickrAPI {
     // it is BAD PRACTICE to put an API key in your code
@@ -148,6 +148,18 @@ struct FlickrAPI {
         // package up and return an InterestingPhoto
         // GS: finished after class
         return InterestingPhoto(id: id, title: title, dateTaken: dateTaken, photoURL: photoURL)
+    }
+    
+    static func fetchImage(fromURLString urlString: String, completion: @escaping (UIImage?) -> Void) {
+        let url = URL(string: urlString)!
+        
+        let task = URLSession.shared.dataTask(with: url) { (dataOptional, urlResponseOptional, errorOptional) in
+            if let data = dataOptional, let image = UIImage(data: data) {
+                // task: call completion correctly
+                // update the view to show the image
+            }
+        }
+        task.resume()
     }
 }
 
