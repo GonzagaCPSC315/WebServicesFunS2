@@ -15,6 +15,7 @@
 		457AD8EF255B65C8002FA6BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 457AD8ED255B65C8002FA6BE /* LaunchScreen.storyboard */; };
 		457AD8F8255B65DE002FA6BE /* FlickrAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457AD8F7255B65DE002FA6BE /* FlickrAPI.swift */; };
 		457AD8FB255B65EB002FA6BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 457AD8FA255B65EB002FA6BE /* Main.storyboard */; };
+		8D062DB4E7E27809DBCB3D95 /* Pods_WebServicesFunS2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D65FD0513D4A39D7609626 /* Pods_WebServicesFunS2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,9 @@
 		457AD8F0255B65C8002FA6BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		457AD8F7255B65DE002FA6BE /* FlickrAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrAPI.swift; sourceTree = "<group>"; };
 		457AD8FA255B65EB002FA6BE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		54D65FD0513D4A39D7609626 /* Pods_WebServicesFunS2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebServicesFunS2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D972E287A2610915FBC120E /* Pods-WebServicesFunS2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebServicesFunS2.debug.xcconfig"; path = "Target Support Files/Pods-WebServicesFunS2/Pods-WebServicesFunS2.debug.xcconfig"; sourceTree = "<group>"; };
+		B6483CDC7EDB00F7649525B8 /* Pods-WebServicesFunS2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebServicesFunS2.release.xcconfig"; path = "Target Support Files/Pods-WebServicesFunS2/Pods-WebServicesFunS2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D062DB4E7E27809DBCB3D95 /* Pods_WebServicesFunS2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +51,8 @@
 			children = (
 				457AD8E1255B65C6002FA6BE /* WebServicesFunS2 */,
 				457AD8E0255B65C6002FA6BE /* Products */,
+				B872C4976AA680B67E8721FC /* Pods */,
+				671EE36A345498EB315E3F8C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +80,24 @@
 			path = WebServicesFunS2;
 			sourceTree = "<group>";
 		};
+		671EE36A345498EB315E3F8C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				54D65FD0513D4A39D7609626 /* Pods_WebServicesFunS2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B872C4976AA680B67E8721FC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9D972E287A2610915FBC120E /* Pods-WebServicesFunS2.debug.xcconfig */,
+				B6483CDC7EDB00F7649525B8 /* Pods-WebServicesFunS2.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,9 +105,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 457AD8F3255B65C8002FA6BE /* Build configuration list for PBXNativeTarget "WebServicesFunS2" */;
 			buildPhases = (
+				7CE48976920FBF167997F134 /* [CP] Check Pods Manifest.lock */,
 				457AD8DB255B65C6002FA6BE /* Sources */,
 				457AD8DC255B65C6002FA6BE /* Frameworks */,
 				457AD8DD255B65C6002FA6BE /* Resources */,
+				9EF0B1C542E2C424488599A5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -137,6 +164,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7CE48976920FBF167997F134 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WebServicesFunS2-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9EF0B1C542E2C424488599A5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WebServicesFunS2/Pods-WebServicesFunS2-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WebServicesFunS2/Pods-WebServicesFunS2-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WebServicesFunS2/Pods-WebServicesFunS2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		457AD8DB255B65C6002FA6BE /* Sources */ = {
@@ -283,6 +352,7 @@
 		};
 		457AD8F4255B65C8002FA6BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D972E287A2610915FBC120E /* Pods-WebServicesFunS2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -301,6 +371,7 @@
 		};
 		457AD8F5255B65C8002FA6BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6483CDC7EDB00F7649525B8 /* Pods-WebServicesFunS2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
